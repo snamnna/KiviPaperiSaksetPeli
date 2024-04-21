@@ -1,0 +1,171 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > Pelaaja</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.peli</a>
+</div>
+
+<h1>Coverage Summary for Class: Pelaaja (org.peli)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Pelaaja</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (13/13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    91.7%
+  </span>
+  <span class="absValue">
+    (11/12)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package org.peli;
+&nbsp;
+&nbsp;/**
+&nbsp; *
+&nbsp; * @author Sanna Lohkovuori
+&nbsp; */
+&nbsp;
+&nbsp;/**
+&nbsp; * Pelaajan toimintaan tarvittava logiikka
+&nbsp; */
+<b class="fc">&nbsp;public class Pelaaja {</b>
+&nbsp;    private int voitot;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Metodi tuottaa satunnaiseksi tulokseksi joko kivi, paperi tai sakset
+&nbsp;     * @return Pelaajan valitsema käsimerkki (kivi, paperi tai sakset)
+&nbsp;     */
+&nbsp;    public String valitseMerkki() {
+<b class="fc">&nbsp;        int merkki = (int) (Math.random() * 3);</b>
+<b class="pc">&nbsp;        return switch (merkki) {</b>
+<b class="fc">&nbsp;            case 0 -&gt; &quot;kivi&quot;;</b>
+<b class="fc">&nbsp;            case 1 -&gt; &quot;paperi&quot;;</b>
+<b class="fc">&nbsp;            case 2 -&gt; &quot;sakset&quot;;</b>
+<b class="nc">&nbsp;            default -&gt; &quot;&quot;;</b>
+&nbsp;        };
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Lisää voittoja yhdellä
+&nbsp;     */
+&nbsp;    public void lisaaVoitto() {
+<b class="fc">&nbsp;        voitot++;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Palauttaa valitun pelaajan voittojen määrän
+&nbsp;     * @return Voittojen lukumäärä
+&nbsp;     */
+&nbsp;    public int getVoitot() {
+<b class="fc">&nbsp;        return voitot;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Tarkistaa, voittaako pelaaja vastustajan annettujen merkkien perusteella
+&nbsp;     *
+&nbsp;     * @param pelaajanMerkki Pelaajan valitsema merkki (kivi, paperi tai sakset)
+&nbsp;     * @param vastustajanMerkki Vastustajan valitsema merkki (kivi, paperi tai sakset)
+&nbsp;     * @return merkkien perusteella true jos pelaaja voitti, muuten false
+&nbsp;     */
+&nbsp;    public boolean tarkistaVoittaja(String pelaajanMerkki, String vastustajanMerkki) {
+<b class="fc">&nbsp;        return (pelaajanMerkki.equals(&quot;kivi&quot;) &amp;&amp; vastustajanMerkki.equals(&quot;sakset&quot;)) ||</b>
+<b class="fc">&nbsp;                (pelaajanMerkki.equals(&quot;paperi&quot;) &amp;&amp; vastustajanMerkki.equals(&quot;kivi&quot;)) ||</b>
+<b class="fc">&nbsp;                (pelaajanMerkki.equals(&quot;sakset&quot;) &amp;&amp; vastustajanMerkki.equals(&quot;paperi&quot;));</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-04-21 18:24</div>
+</div>
+</body>
+</html>
