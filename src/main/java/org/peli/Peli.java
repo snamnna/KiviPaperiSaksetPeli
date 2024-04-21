@@ -82,7 +82,7 @@ public class Peli {
 
 
     /**
-     * Lisää 3 sekunnin viiveen pelikierrosten väliin.
+     * Lisää 2 sekunnin viiveen pelikierrosten väliin.
      */
     public void viive() {
         try {
