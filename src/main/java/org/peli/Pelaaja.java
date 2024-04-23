@@ -5,6 +5,9 @@ package org.peli;
  * @author Sanna Lohkovuori
  */
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Pelaajan toimintaan tarvittava logiikka
  */
@@ -16,13 +19,13 @@ public class Pelaaja {
      * @return Pelaajan valitsema käsimerkki (kivi, paperi tai sakset)
      */
     public String valitseMerkki() {
-        int merkki = (int) (Math.random() * 3);
-        return switch (merkki) {
-            case 0 -> "kivi";
-            case 1 -> "paperi";
-            case 2 -> "sakset";
-            default -> "";
-        };
+        Map<Integer, String> valinnat = new HashMap<>();
+        valinnat.put(0, "kivi");
+        valinnat.put(1, "paperi");
+        valinnat.put(2, "sakset");
+
+        int satunnainenArvo = (int) (Math.random() * 3);
+        return valinnat.get(satunnainenArvo);
     }
 
     /**
